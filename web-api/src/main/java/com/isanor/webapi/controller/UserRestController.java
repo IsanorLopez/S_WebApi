@@ -40,12 +40,6 @@ public class UserRestController {
         User user2 = new User("Alejandro", "Molina", "alejandro@isanor.com");
         User user3 = new User("Carlos", "Hernandez", "carlos@isanor.com");
 
-        //List<User> users = new ArrayList<>();
-
-        //users.add(user1);
-        //users.add(user2);
-        //users.add(user3);
-
         return Arrays.asList(user1, user2, user3);
     }
 
