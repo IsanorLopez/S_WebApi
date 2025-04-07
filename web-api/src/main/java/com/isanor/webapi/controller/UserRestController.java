@@ -2,9 +2,7 @@ package com.isanor.webapi.controller;
 
 import com.isanor.webapi.models.User;
 import com.isanor.webapi.models.dto.UserDto;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -12,7 +10,7 @@ import java.util.*;
 @RequestMapping("/api")
 public class UserRestController {
 
-    @GetMapping("/details")
+    @GetMapping("/user")
     public UserDto details() {
 
         UserDto userDto = new UserDto();
@@ -26,7 +24,16 @@ public class UserRestController {
         return userDto;
     }
 
-    @GetMapping("/details/list")
+    @PostMapping("/user")
+    public User addUser(@RequestBody User user) {
+
+        user.setName("Isanor");
+
+        return user;
+
+    }
+
+    @GetMapping("/user/list")
     public List<User> listDetails() {
 
         User user1 = new User("IsanorX", "Lopez", "isanor@isanor.com");
