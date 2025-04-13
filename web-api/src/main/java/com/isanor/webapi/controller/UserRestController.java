@@ -8,15 +8,16 @@ import java.util.Map;
 import java.util.HashMap;
 
 @RestController
-@RequestMapping("/api")
+//@RequestMapping("desarrollo/management")
+@RequestMapping("${basePath}")
 public class UserRestController {
 
-    @GetMapping("/details")
+    @GetMapping("${endpoint}")
     public Map<String, Object> details() {
 
         Map<String, Object> response = new HashMap<>();
 
-        response.put("Title", "Spring Boot Application");
+        response.put("Title", "Spring Boot Application REST");
         response.put("Name", "Isanor Lopez");
 
         return response;
